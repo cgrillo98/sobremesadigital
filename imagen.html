@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Sobremesa Digital</title>
+
+<link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
+
+
+<link rel="stylesheet" type="text/css" href="basico.css">
+
+<link rel="stylesheet" type="text/css" href="texto.css">
+
+<style>
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+.btn-group .button {
+	background-color: #666666; 
+	border: none;
+	color: white;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	float: left;
+	padding-top: 9px;
+	padding-right: 15px;
+	padding-bottom: 9px;
+	padding-left: 15px;
+	font-family: 'Lora', serif;
+}
+
+.btn-group .button:hover {
+ background-color: #2196F3; /* Azul claro */
+	
+	
+}
+
+
+
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+</style>
+
+
+
+
+</head>
+
+<body class="oneColLiqCtrHdr">
+
+<div id="container"> 
+  
+   
+<!-- menu --> 
+  <ul>
+ 
+ 
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Prototipo</a>
+    <div class="dropdown-content">
+      <a href="instalacion.html">Instalación</a>
+      <a href="texto.html">Texto</a>
+      <a href="data.html">Visualización de datos</a>
+      <a href="http://54.175.193.171:4200">Imagen</a>
+    </li>
+    
+   
+   
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Proyecto</a>
+    <div class="dropdown-content">
+      <a href="about.html">Acerca de</a>
+       <a href="proceso.html">Proceso</a>
+      <a href="equipo.html">Equipo</a>
+      
+
+    </li>
+       
+    
+   <li class="dropdown"><a href="index.html">Inicio</a></li>
+   
+  </li>
+</ul>
+
+ 
+    <!-- end menu -->
+ 
+ 
+ 
+</div>
+ 
+ 
+ 
+ 
+<div id="header"> <!-- end #header --></div>
+  
+
+
+  <div id="mainContent">
+  
+  
+  <div align="left">
+  
+  <p>
+<span class="style1">*// Imagen  </span></p>
+
+
+ <p class="style2">Esta representación utiliza las palabras de los objetos del texto original, para generar búsquedas de imágenes en internet y arrojar resultados. En esta propuesta se utilizan diferentes repositorios de imágenes especializados y no especializados (Las colecciones digitales de la Biblioteca Británica, el Victoria and Albert Museum y Google). </p>
+
+
+ <p class="style2">
+Esta representación de los objetos se presenta como <span id="resaltador">una herramienta de analítica cultural (Manovich), donde las representaciones de los objetos son el resultado de una sociedad digital hiperconectada</span>.
+
+
+</p>
+
+
+
+
+<table width="52%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="14%"><div class="column">
+ 
+  <label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+
+
+  </div></td>
+    <td width="86%"><div class="column">
+   <span class="style2"> Met </span>
+  </div></td>
+  </tr>
+ 
+ 
+ 
+ <tr>
+    <td width="14%"><div class="column">
+  <label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+
+  </div></td>
+    <td width="86%"><div class="column">
+   <span class="style2"> Google </span>
+  </div></td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="14%"><div class="column">
+  <label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+
+  </div></td>
+    <td width="86%"><div class="column">
+   <span class="style2"> V&amp;A </span>
+  </div></td>
+  </tr>
+  
+  
+  
+   <tr>
+    <td width="14%"><div class="column">
+  <label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+
+  </div></td>
+    <td width="86%"><div class="column">
+   <span class="style2"> British Library </span>
+  </div></td>
+  </tr>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
+  <tr>
+ <td width="14%"><div class="column">
+<div class="btn-group">
+  <button class="button">Play</button>
+</div></td>
+
+  </tr>
+  
+  
+  
+  
+  
+</table>
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  </div>
+ 
+ 
+
+ 
+  <!-- end #mainContent -->
+  
+  
+  
+  
+  
+  
+  </div>
+  
+<div id="parrafo">
+  
+   </div> <!-- end parrafo -->
+  
+  <div id="footer">
+    
+    <!-- end #footer -->
+  </div>
+<!-- end #container -->
+</body>
+</html>
