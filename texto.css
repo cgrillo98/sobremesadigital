@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+
+
+
+
+/* background */
+#muebles-deco {
+	background-color: #66CCCC;
+	
+		
+
+	   }
+	   
+	
+#joyería {
+	background-color:#FF9999;
+
+	   }
+	   	 
+#vestuario {
+	background-color:#F0CA66;
+	   }	
+	   
+	   	   
+#instrumentos {
+	background-color:#CC99CC;
+
+	   }
+
+#resaltador {
+	background-color:#E5E5E5;
+	   }
+	   
+#resaltador_azul {
+	background-color:#66CCFF;
+	   }	   
+
+
+
+
+
+
+/* menu categorias */
+
+
+  .floating-menu2 {
+    font-family: sans-serif;
+    padding: 0px;;
+    width: 54px;
+	height: 190px;
+    z-index: 100;
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+  }
+
+  .floating-menu2 a, 
+  .floating-menu2 h3 {
+    font-size: 0.9em;
+    display: block;
+    margin: 0 0.5em;
+  }

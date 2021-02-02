@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+
+<style>
+    svg {
+        display: block;
+        margin: auto;
+        /* background-color: gray;
+        fill: whitesmoke; */
+    }
+
+    .node circle {}
+
+    .node {
+  color: #766355;
+	font-family: 'Lora', serif;
+	font-size: 6px;
+  
+  
+    }
+
+    .link {
+        fill: none;
+        stroke: #BFBFBF;
+        stroke-width: 1px;
+    }
+
+</style>
+
+<body>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <script>
+
+                var root = {
+  "name": "Diario",
+  "children": [
+    {
+      "name": "3 Junio 189...",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Sábanas heladas"
+            },
+            {
+              "name": "Escritorio"
+            },
+            {
+              "name": "Lámpara"
+            },
+            {
+              "name": "Persiana"
+            },
+            {
+              "name": "Viejas tapicerías desteñidas"
+            },
+            {
+              "name": "Brocatel de los sillares"
+            },
+            {
+              "name": "Escritorio"
+            },
+            {
+              "name": "Lámpara"
+            },
+            {
+              "name": "Banco del boulevard"
+            },
+            {
+              "name": "Gabinetico de estudios"
+            },
+            {
+              "name": "Lámpara"
+            },
+            {
+              "name": "Catre de bronce"
+            },
+            {
+              "name": "Edredones"
+            },
+            {
+              "name": "Mesa de trabajo"
+            },
+            {
+              "name": "Cortinas de gasa japonesa"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Corpiño florecido (f)"
+            },
+            {
+              "name": "Vestido de crespón de seda (f)"
+            },
+            {
+              "name": "Guirnalda de rosa de Bengala (f)"
+            },
+            {
+              "name": "Fracs negros (m)"
+            },
+            {
+              "name": "Blancas pecheras (m)"
+            },
+            {
+              "name": "Vestido (f)"
+            },
+            {
+              "name": "Vestido (f)"
+            },
+            {
+              "name": "Tules diáfanos (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Cetro"
+            },
+            {
+              "name": "Medalla (de pintora)"
+            },
+            {
+              "name": "Medalla (de pintora)"
+            },
+            {
+              "name": "Medalla (de pintora)"
+            },
+            {
+              "name": "Esmeralda"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Lentes de vidrio negro"
+            },
+            {
+              "name": "Caja llena de tiquetes"
+            },
+            {
+              "name": "Anteojos negros"
+            },
+            {
+              "name": "Orquesta"
+            },
+            {
+              "name": "Piano"
+            },
+            {
+              "name": "Teclado de marfil"
+            },
+            {
+              "name": "Piano "
+            },
+            {
+              "name": "Pipa"
+            },
+            {
+              "name": "Vela del barco"
+            },
+            {
+              "name": "Espejo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "20 Junio",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Sábanas heladas"
+            },
+            {
+              "name": "Cuadrito de Raffaeli (arte)"
+            },
+            {
+              "name": "Porcelanas"
+            },
+            {
+              "name": "Cotillón"
+            },
+            {
+              "name": "Lienzos (arte)"
+            },
+            {
+              "name": "Cartones (arte)"
+            },
+            {
+              "name": "Aguafuertes (arte)"
+            },
+            {
+              "name": "Bronces (arte)Cotillón"
+            },
+            {
+              "name": "Mármoles (arte)"
+            },
+            {
+              "name": "Porcelanas"
+            },
+            {
+              "name": "Tapices"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Vestidos (f)"
+            },
+            {
+              "name": "Vestido (f)"
+            },
+            {
+              "name": "Casacón rojo (m)"
+            },
+            {
+              "name": "Casacón blanco (m)"
+            },
+            {
+              "name": "Chaleco de seda bordado (m)"
+            },
+            {
+              "name": "Medias  (m)"
+            },
+            {
+              "name": "Zapatos femeninos para hacer piruetas (m)"
+            },
+            {
+              "name": "Vestido (f)"
+            },
+            {
+              "name": "Dengue (m)"
+            },
+            {
+              "name": "Pechera de batista plegada y rizada (m)"
+            },
+            {
+              "name": "Solapa del frac (m)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Milagrosas medallas"
+            },
+            {
+              "name": "Pedrerías dignas de un rajah"
+            },
+            {
+              "name": "Perlas"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Laboratorio de psicofísica"
+            },
+            {
+              "name": "Guillotina"
+            },
+            {
+              "name": "Bomba"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "23 Junio",
+      "children": [
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Puño de la camisa (m)"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Telégrafo"
+            },
+            {
+              "name": "Telegrama"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "29 Junio",
+      "children": [
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Vestido nuevo (f)"
+            },
+            {
+              "name": "Puño de la camisa (m)"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Maleta de viaje"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "30 Junio",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Tendido de antiguo damasco oscuro"
+            },
+            {
+              "name": "Cama"
+            },
+            {
+              "name": "Almohadas"
+            },
+            {
+              "name": "Cirios"
+            },
+            {
+              "name": "Lecho profundo dorado y ornamentado como un altar"
+            },
+            {
+              "name": "Muebles sobrios"
+            },
+            {
+              "name": "Brocateles de iglesias desteñidos por el tiempo"
+            },
+            {
+              "name": "Mobiliario del siglo XVI"
+            },
+            {
+              "name": "Tina de cristal opalescente"
+            },
+            {
+              "name": "Mesas de tocador de cristal y níquel"
+            },
+            {
+              "name": "Decoración pompeyana de las paredes y piso"
+            },
+            {
+              "name": "Armario de maderas olorosas perfumado"
+            },
+            {
+              "name": "Divan turco"
+            },
+            {
+              "name": "Lámparas del salón"
+            },
+            {
+              "name": "Diván"
+            },
+            {
+              "name": "Miniatura montada por bassot en círculo de perlas rosadas"
+            },
+            {
+              "name": "Piel de oso negro"
+            },
+            {
+              "name": "Lecho"
+            },
+            {
+              "name": "Cuadros de Vasquez (arte)"
+            },
+            {
+              "name": "Marcos españoles de oro desteñido"
+            },
+            {
+              "name": "Sábanas de raso negro"
+            },
+            {
+              "name": "Paredes tendidas de sedería japonesa (..) bordados de oro y plata"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Tacones de botas (m)"
+            },
+            {
+              "name": "Corpiño bajo de gasa verde (f)"
+            },
+            {
+              "name": "Blancas batistas de sus ropas íntimas (f)"
+            },
+            {
+              "name": "Camisas de dormir (f)"
+            },
+            {
+              "name": "Enaguas bordadas (f)"
+            },
+            {
+              "name": "Pañuelos de baile (f)"
+            },
+            {
+              "name": "Calzones de seda (f)"
+            },
+            {
+              "name": "Vestido con estilo masculino (f-m)"
+            },
+            {
+              "name": "Calzado (zapatos f-m)"
+            },
+            {
+              "name": "Encajes antiguos (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Esmeraldas de Muzo"
+            },
+            {
+              "name": "Collar de diamantes"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Llave de la casa"
+            },
+            {
+              "name": "Vaina  de cuero"
+            },
+            {
+              "name": "Puñalito toledano damasquinado y cincelado"
+            },
+            {
+              "name": "Saco de viaje"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5 Julio"
+    },
+    {
+      "name": "10 Julio",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Cama donde no se acostarían mis criados parisienses"
+            },
+            {
+              "name": "Mesa tosca"
+            },
+            {
+              "name": "Muebles relucen como acabados de barnizar"
+            },
+            {
+              "name": "Sábanas gruesas"
+            },
+            {
+              "name": "Manta que me acompaña en mis viajes"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Platón de madera"
+            },
+            {
+              "name": "Telégrafo"
+            },
+            {
+              "name": "Espada en mano"
+            },
+            {
+              "name": "Bayoneta"
+            },
+            {
+              "name": "Máquinas de guerra"
+            },
+            {
+              "name": "Explosivos"
+            },
+            {
+              "name": "Proyectiles"
+            },
+            {
+              "name": "Granadas"
+            },
+            {
+              "name": "Bombas"
+            },
+            {
+              "name": "Descargas de fucilería"
+            },
+            {
+              "name": "Imprenta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "25 Julio",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Tina de cristal rosado"
+            },
+            {
+              "name": "Sábanas de raso negro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "26 Julio",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Mesas redondas de grandes hoteles"
+            },
+            {
+              "name": "Cabecera de la mesa"
+            },
+            {
+              "name": "Arte japonés"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Corbateado de rosa (m)"
+            },
+            {
+              "name": "Zapatos puntiagudos (m)"
+            },
+            {
+              "name": "Camisa"
+            },
+            {
+              "name": "Faldones de larga levita negra (m)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Diamantes pajizos montados en botones de camisa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5 Agosto",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Diván de la alcoba"
+            },
+            {
+              "name": "Estatua"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Sombreros (f)"
+            },
+            {
+              "name": "Vestidos (f)"
+            },
+            {
+              "name": "Vestida con guirnalda de hojas de parra (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Par de diamantes "
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Seis baúles llenos de sombreros y vestidos (f)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "9 Agosto"
+    },
+    {
+      "name": "11 Agosto",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Papel del comedor"
+            },
+            {
+              "name": "Luz de bujía del candelabro"
+            },
+            {
+              "name": "Mesa"
+            },
+            {
+              "name": "Asiento"
+            },
+            {
+              "name": "Banco de piedra"
+            },
+            {
+              "name": "Persianas de mis balcones"
+            },
+            {
+              "name": "Jarrón de Bohemia"
+            },
+            {
+              "name": "Mesa"
+            },
+            {
+              "name": "Puerta entreabierta"
+            },
+            {
+              "name": "Persianas "
+            },
+            {
+              "name": "Lámpara que ardía cobijada por amplia pantalla de gasa"
+            },
+            {
+              "name": "Cortinas"
+            },
+            {
+              "name": "Cortinas blancas caidas"
+            },
+            {
+              "name": "Luz de las bujías"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Abrigo de viaje (f)"
+            },
+            {
+              "name": "Sombrero (f)"
+            },
+            {
+              "name": "Guantes de Suecia (f)"
+            },
+            {
+              "name": "Vestido de seda roja (f)"
+            },
+            {
+              "name": "Toca negra (f)"
+            },
+            {
+              "name": "Vestido gris de refinada elegancia (m)"
+            },
+            {
+              "name": "Mano enguantada de cabritilla oscura (m)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Camafeo montado en oro verdoso"
+            },
+            {
+              "name": "Luna como joya de plata sobre estuche negro de raso"
+            },
+            {
+              "name": "Camafeo (...) con tres hojas y una mariposa en oro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "11 Octubre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Escritorio"
+            },
+            {
+              "name": "Lámpara"
+            },
+            {
+              "name": "Mobiliarios y obras de arte que me rodearon en Paris"
+            },
+            {
+              "name": "Escritorio"
+            },
+            {
+              "name": "Lámpara"
+            },
+            {
+              "name": "Amplia mesa de oscura carpeta"
+            },
+            {
+              "name": "Diván bajo"
+            },
+            {
+              "name": "Espejo claro enmmarcado en bronce"
+            },
+            {
+              "name": "Cuadros de Sir Edward Burne Jones (arte)"
+            },
+            {
+              "name": "Pliegues opulentos cortinas de terciopelo verde"
+            },
+            {
+              "name": "Alfombra"
+            },
+            {
+              "name": "Vasitos de electroplata"
+            },
+            {
+              "name": "Eterna manta sevillana"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Negro frac"
+            },
+            {
+              "name": "Brodequines de charol"
+            },
+            {
+              "name": "Camisa"
+            },
+            {
+              "name": "Calcetines de seda"
+            },
+            {
+              "name": "Pañuelos de batista"
+            },
+            {
+              "name": "Guantes blancos"
+            },
+            {
+              "name": "Gardenias para el hojal"
+            },
+            {
+              "name": "Vestido de franela"
+            },
+            {
+              "name": "Plumas del rojo birrete"
+            },
+            {
+              "name": "Seda roja del corpiño"
+            },
+            {
+              "name": "Smoking"
+            },
+            {
+              "name": "Vestidos de seda rosada"
+            },
+            {
+              "name": "Oscuro ulster que oculta el vestido"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Camafeo montado en oro"
+            },
+            {
+              "name": "Tres hojas de rama del camafeo y mariposa blanca"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Antiparras"
+            },
+            {
+              "name": "Diminutas tazas de frágil porcelana"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "10 Noviembre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Mobiliario"
+            },
+            {
+              "name": "Vajillas"
+            },
+            {
+              "name": "Cuadros (arte)"
+            },
+            {
+              "name": "Aguafuertes"
+            },
+            {
+              "name": "Acuarelas"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Corpiño de seda roja (f)"
+            },
+            {
+              "name": "Falda que cae sobre pies desnudos (f)"
+            },
+            {
+              "name": "Orla de dibujo bizantino (f)"
+            },
+            {
+              "name": "Pliegues níveos del manto que la envuelve (f)"
+            },
+            {
+              "name": "Oro bordado sobre tela opaca (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Broche del camafeo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "13 Noviembre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Cortinas verdemar"
+            },
+            {
+              "name": "Amplio catre"
+            },
+            {
+              "name": "Lamparilla eléctrica con hojas de bronce"
+            },
+            {
+              "name": "Cabecera del lecho"
+            },
+            {
+              "name": "Tapices"
+            },
+            {
+              "name": "Alfombra"
+            },
+            {
+              "name": "Olán de los almohadones"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Cartera de cuero de caimán y esquineras de oro (m)"
+            },
+            {
+              "name": "Camisa de batista (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Mariposa del camafeo"
+            },
+            {
+              "name": "Medalla antigua el perfil de la abuela y de Helena"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Caja de cristal "
+            },
+            {
+              "name": "Vaso de nácar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "17 Noviembre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Amplio gabinete"
+            },
+            {
+              "name": "Sillón"
+            },
+            {
+              "name": "Diván de marroquí negro"
+            },
+            {
+              "name": "Pesado escritorio de nogal"
+            },
+            {
+              "name": "Lámparas en la sala"
+            },
+            {
+              "name": "Lámpara que ilumina el cuadro"
+            },
+            {
+              "name": "Portier"
+            },
+            {
+              "name": "Gabinete"
+            },
+            {
+              "name": "Salón donde ardían cuatro lámparas"
+            },
+            {
+              "name": "Sillón"
+            },
+            {
+              "name": "Lienzo de un pintor que murió hace años"
+            },
+            {
+              "name": "Mesas de hierro"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "(En una pintura) Fantástico traje (f) "
+            },
+            {
+              "name": "(En una pintura) Manto blanco (f)"
+            },
+            {
+              "name": "Frac (m)"
+            },
+            {
+              "name": "Vestida de blanco (f)"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Curiosos instrumentos de observación"
+            },
+            {
+              "name": "Varios aparaticos"
+            },
+            {
+              "name": "Vendas"
+            },
+            {
+              "name": "Alfileres"
+            },
+            {
+              "name": "Pesas"
+            },
+            {
+              "name": "Globo de caucho"
+            },
+            {
+              "name": "Reloj terminado con una pluma"
+            },
+            {
+              "name": "Cronómetro"
+            },
+            {
+              "name": "Timbre eléctrico"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "20 Noviembre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Escaparates de nogal"
+            },
+            {
+              "name": "Miniaturas encuadradas de diminutos diamantes"
+            },
+            {
+              "name": "Lámpara"
+            },
+            {
+              "name": "Lienzos españoles"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Corbateado de blanco (m)"
+            },
+            {
+              "name": "Frac de Poole (m)"
+            },
+            {
+              "name": "Pechera abotonada con una perla negra (m)"
+            },
+            {
+              "name": "Camisa de fuerza"
+            },
+            {
+              "name": "Brillantes harapos (f)"
+            },
+            {
+              "name": "Vestido de reina (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": " Perla negra"
+            },
+            {
+              "name": "Diamantes"
+            },
+            {
+              "name": "Cascabeles del cetro"
+            },
+            {
+              "name": "Joyas"
+            },
+            {
+              "name": "Arreos de vestido de reina"
+            },
+            {
+              "name": "Corona de rosas"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Brújula"
+            },
+            {
+              "name": "Estuche"
+            },
+            {
+              "name": "Terciopelo negro del enorme estuche"
+            },
+            {
+              "name": "Hacha"
+            },
+            {
+              "name": "Lanza"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5 Diciembre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Enorme vaso etrusco"
+            },
+            {
+              "name": "Partesana cincelada"
+            },
+            {
+              "name": "Espadas árabes"
+            },
+            {
+              "name": "Moharras árabes"
+            },
+            {
+              "name": "Franciscas dagas damasquinadas de oro"
+            },
+            {
+              "name": "Sillones de consulta"
+            },
+            {
+              "name": "Sillón"
+            },
+            {
+              "name": "Puerta entreabierta del gabinete"
+            },
+            {
+              "name": "Cuadro (arte)"
+            },
+            {
+              "name": " Impresiones de arte"
+            },
+            {
+              "name": "Cuadros de Gainsbourgh y Reynolds (arte)"
+            },
+            {
+              "name": "Brocateles"
+            },
+            {
+              "name": "Velador veneciano de malaquita"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Cheviotte del vestido de invierno (m)"
+            },
+            {
+              "name": "Pesado abrigo de pieles (m)"
+            },
+            {
+              "name": "Gruesos botarrones (m)"
+            },
+            {
+              "name": "Guante de esgrima"
+            },
+            {
+              "name": "Vestidos"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Anillo de rubíes"
+            },
+            {
+              "name": "Rubí para anillo nupcial"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Anteojos negros"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "26 Noviembre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Puerta de la consulta"
+            },
+            {
+              "name": "Tina de mármol blanco"
+            },
+            {
+              "name": "Diván"
+            },
+            {
+              "name": "Mantas"
+            },
+            {
+              "name": "Pieles"
+            },
+            {
+              "name": "Aguafuertes"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Levitón negro (m)"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Reloj Cronómetro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "17 Enero",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Almohadones"
+            },
+            {
+              "name": "Escritorio"
+            },
+            {
+              "name": "Poltrona"
+            },
+            {
+              "name": "Diván"
+            },
+            {
+              "name": "Cama"
+            },
+            {
+              "name": "Lecho"
+            },
+            {
+              "name": "Mesa"
+            },
+            {
+              "name": "Cirio"
+            },
+            {
+              "name": "Escritorio"
+            },
+            {
+              "name": "Sillón"
+            },
+            {
+              "name": "Diván"
+            },
+            {
+              "name": "Diván"
+            },
+            {
+              "name": "Colección de tapices persas"
+            },
+            {
+              "name": "Figura de bronce"
+            },
+            {
+              "name": "Campanas de oro"
+            },
+            {
+              "name": "Punteros (del reloj)"
+            },
+            {
+              "name": "Aguafuertes"
+            },
+            {
+              "name": "Tapiz de Ausbusson"
+            },
+            {
+              "name": "Calados de los balcones"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Pesado abrigo de pieles (m)"
+            },
+            {
+              "name": "Camisa abierta (m)"
+            },
+            {
+              "name": "Trousseau de novia (f)"
+            },
+            {
+              "name": "Camisas (m)"
+            },
+            {
+              "name": "Bolsillos del pantalón (m)"
+            },
+            {
+              "name": "Vestido negro (de hermana de la caridad f)"
+            },
+            {
+              "name": "Cheviotte gris (m)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Broche de diamantes"
+            },
+            {
+              "name": "Dedos llenos de anillos"
+            },
+            {
+              "name": "Diamantes"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Viejo reloj del vestíbulo"
+            },
+            {
+              "name": "Reloj de mármol negro"
+            },
+            {
+              "name": "Termómetro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "10 Marzo",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Copia enmarcada hecha a mano del cuadro"
+            },
+            {
+              "name": " Escritorio"
+            },
+            {
+              "name": "Mesa de bronce"
+            },
+            {
+              "name": "Jardineras llenas de flores"
+            },
+            {
+              "name": "Veladores de malaquita"
+            },
+            {
+              "name": "Sillón"
+            },
+            {
+              "name": "Cortina de antiguo tejido"
+            },
+            {
+              "name": "Tela (del cuadro)"
+            },
+            {
+              "name": "Lienzo"
+            },
+            {
+              "name": "Paredes tendidas de cuero de Córdoba"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Túnica (f)"
+            },
+            {
+              "name": "Pliegues de largo manto (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Joyas"
+            },
+            {
+              "name": "Camafeo"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Telégrafo"
+            },
+            {
+              "name": "Cofre de hierro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "10 Abril",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Sillón"
+            },
+            {
+              "name": "Puerta entreabierta"
+            },
+            {
+              "name": "Lecho"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Quevedos de oro "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "20 Marzo",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Silla"
+            },
+            {
+              "name": "Canapé"
+            },
+            {
+              "name": "Escultura asiria cuerpo de león con cabeza humana"
+            },
+            {
+              "name": "Budha"
+            },
+            {
+              "name": "Restos de estatuas"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Piedras"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "12 Abril",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Cuadro de Whistler (arte)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Camafeo"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Llave"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "13 Abril",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Mobiliario"
+            },
+            {
+              "name": "Lámparas"
+            },
+            {
+              "name": "Pantallas de encaje"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Piano"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "14 Abril",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Ánfora"
+            },
+            {
+              "name": "Lienzos"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Vestido de blanco (del papa) (m)"
+            },
+            {
+              "name": "Tacones rojos (f)"
+            },
+            {
+              "name": "Pelucas (f-m)"
+            },
+            {
+              "name": "Chorreras de encajes"
+            },
+            {
+              "name": "Casacas de colorines (de cortesanos)"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Brújula"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "15 Abril"
+    },
+    {
+      "name": "19 Abril",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Cálices de las flores de un ramo"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Vestido de opaca seda negra (f)"
+            },
+            {
+              "name": "(Ornamento de) azabaches (f)"
+            },
+            {
+              "name": "Ramo de claveles rosados en el corpiño (f)"
+            },
+            {
+              "name": "Sombrero de fieltro ornamentado de plumas negras (f)"
+            },
+            {
+              "name": "Cartera forrada en cuero de Rusia (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Piedras"
+            },
+            {
+              "name": "Collares de diamantes blancos"
+            },
+            {
+              "name": "Perlas gemelas"
+            },
+            {
+              "name": "Pedrería"
+            },
+            {
+              "name": "Gruesos anillos episcopales"
+            },
+            {
+              "name": "Coronas de reyes"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Mostrador"
+            },
+            {
+              "name": "Estuche de seda negra"
+            },
+            {
+              "name": "Carpeta verde"
+            },
+            {
+              "name": "Mesa (de juego)"
+            },
+            {
+              "name": "Cofre"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "28 Abril",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Puerta del vestíbulo"
+            },
+            {
+              "name": "Lámparas"
+            },
+            {
+              "name": "Sillas"
+            },
+            {
+              "name": "Diván"
+            },
+            {
+              "name": "Velador"
+            },
+            {
+              "name": "Lámpara"
+            },
+            {
+              "name": "Sillón de brocatel"
+            },
+            {
+              "name": "Brocatel"
+            },
+            {
+              "name": "Alta lámpara"
+            },
+            {
+              "name": "Alfombra"
+            },
+            {
+              "name": "Pantallón de gasa verde desteñido de la lámpara"
+            },
+            {
+              "name": "Mesita"
+            },
+            {
+              "name": "Cajas de terciopelo y raso"
+            },
+            {
+              "name": "Terciopelo"
+            },
+            {
+              "name": "Raso"
+            },
+            {
+              "name": "Bujías"
+            },
+            {
+              "name": "Velador"
+            },
+            {
+              "name": "Portier"
+            },
+            {
+              "name": "Blandos cojines"
+            },
+            {
+              "name": "Divan turco amplio como lecho nupcial"
+            },
+            {
+              "name": "Baúles"
+            },
+            {
+              "name": "Cortinas de terciopelo"
+            },
+            {
+              "name": "Terciopelo"
+            },
+            {
+              "name": "Lecho"
+            },
+            {
+              "name": "Lámpara bizantina de oscuro cristal rojo"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Zapato bajo de charol (f)"
+            },
+            {
+              "name": "Media de seda negra fina como un encaje (f)"
+            },
+            {
+              "name": "Pañuelo de batista y encajes (f)"
+            },
+            {
+              "name": "Manga de opaca seda ornamentada de azabaches (f)"
+            },
+            {
+              "name": "Falda negra con brillo mate de azabaches (f)"
+            },
+            {
+              "name": "Corpiño de terciopelo negro (f)"
+            },
+            {
+              "name": "Largo sobretodo gris de viaje (f)"
+            },
+            {
+              "name": "Pañuelo blanco (f)"
+            },
+            {
+              "name": "Abrigo de amplios bolsillos (m)"
+            },
+            {
+              "name": "Pechera (m)"
+            },
+            {
+              "name": "Cartera (m)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Diamantes pajizos"
+            },
+            {
+              "name": "Rubíes del mismo matiz"
+            },
+            {
+              "name": "Esmeralda del broche más pálida"
+            },
+            {
+              "name": "Pedrería"
+            },
+            {
+              "name": "Collar de diamantes"
+            },
+            {
+              "name": "Perla negra"
+            },
+            {
+              "name": "Piedras con defecto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1 Septiembre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Objetos dignos de museo"
+            },
+            {
+              "name": "Mesa"
+            },
+            {
+              "name": "Anticuallas"
+            },
+            {
+              "name": "Cintas (cotillón)"
+            },
+            {
+              "name": "Gasas (cotillón)"
+            },
+            {
+              "name": "Almohada"
+            },
+            {
+              "name": "Triclinios de marfil"
+            },
+            {
+              "name": "Puerta de la alcoba"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Uniformes más de oro que de paño (m)"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Violín"
+            },
+            {
+              "name": "Guitarra"
+            },
+            {
+              "name": "Gabinetes de experimentación"
+            },
+            {
+              "name": "Monóculo"
+            },
+            {
+              "name": "Lente de microscopio"
+            },
+            {
+              "name": "Lente de enorme telescopio"
+            },
+            {
+              "name": "Monóculo"
+            },
+            {
+              "name": "Florete"
+            },
+            {
+              "name": "Armas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "18 Septiembre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Puerta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1 Octubre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Tapices"
+            },
+            {
+              "name": "Muebles antiguos"
+            },
+            {
+              "name": "Cuadros (arte)"
+            },
+            {
+              "name": "Bronce (arte)"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Armas"
+            },
+            {
+              "name": "Copa de whisky"
+            },
+            {
+              "name": "Yelmo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "15 Octubre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Puerta"
+            },
+            {
+              "name": "Retratos"
+            },
+            {
+              "name": "Puerta"
+            },
+            {
+              "name": "Paredes cubiertas de cuero de Córdoba"
+            },
+            {
+              "name": "Vasos (florero)"
+            },
+            {
+              "name": "Floreros de Murano"
+            },
+            {
+              "name": "Jardinera"
+            },
+            {
+              "name": "Mesa de mármol"
+            },
+            {
+              "name": "Cortinas"
+            },
+            {
+              "name": "Marco de retrato"
+            },
+            {
+              "name": "Veladores de malaquita"
+            },
+            {
+              "name": "Alfombras de oriente"
+            },
+            {
+              "name": "Escritorio"
+            },
+            {
+              "name": "Cuadro (arte)"
+            },
+            {
+              "name": "Oscura tapicería"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Túnica (f)"
+            },
+            {
+              "name": "Manto (f)"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Joyas"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Llave"
+            },
+            {
+              "name": "Bujías de candelabro"
+            },
+            {
+              "name": "Bujías de candelabro"
+            },
+            {
+              "name": "Cofre de hierro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "25 Octubre",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Escritorio"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Partes telegráficos"
+            },
+            {
+              "name": "Telegramas"
+            },
+            {
+              "name": "Aguja magnética"
+            },
+            {
+              "name": "Imán"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "16 Enero",
+      "children": [
+        {
+          "name": "Muebles-deco",
+          "children": [
+            {
+              "name": "Cortina de terciopelo"
+            },
+            {
+              "name": "Cama"
+            },
+            {
+              "name": "Muebles"
+            },
+            {
+              "name": "Objetos de arte"
+            },
+            {
+              "name": "Almohadones"
+            }
+          ]
+        },
+        {
+          "name": "Vestuario",
+          "children": [
+            {
+              "name": "Calados de encaje"
+            }
+          ]
+        },
+        {
+          "name": "Joyería",
+          "children": [
+            {
+              "name": "Camafeo"
+            }
+          ]
+        },
+        {
+          "name": "Instrumentos",
+          "children": [
+            {
+              "name": "Bujía"
+            },
+            {
+              "name": "Cuchara de plata"
+            },
+            {
+              "name": "Punteros de oro"
+            },
+            {
+              "name": "Reloj de mármol negro"
+            },
+            {
+              "name": "Punteros de oro"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+        var diameter = 1460;
+        var duration = 1000;
+
+        var colores = {
+            "muebles-deco": "#66CCCC",
+            "joyería": "#FF9999",
+			"vestuario": "#F0CA66",
+            "instrumentos": "#CC99CC"
+        };
+
+//        var c10  = d3.scale.category10();    !!!!!!!!!! comentar para apagar var c10
+ 
+
+
+        var tree = d3.layout.tree()
+            .size([360, diameter / 2 - 190])
+            .separation(function (a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
+
+        var diagonal = d3.svg.diagonal.radial()
+            .projection(function (d) { return [d.y, d.x / 180 * Math.PI]; });
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", diameter + 20)
+            .attr("height", diameter - 40)
+            .append("g")
+            .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+        var nodes = tree.nodes(root),
+            links = tree.links(nodes);
+
+        var link = svg.selectAll(".link")
+            .data(links)
+            .enter().append("path")
+            .attr("class", "link")
+            .attr("d", diagonal)
+           
+		  
+		  // color para los links    /*   */
+		
+		   
+		    .style("stroke", function (d) {
+                var t = getParent(d.source);
+                if (t == '#b7b7b7') {
+                    t = getParent(d.target);
+                }
+                return t;
+            });
+			
+
+
+        //   .style("stroke", getParent);
+
+        var node = svg.selectAll(".node")
+            .data(nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", function (d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+
+
+//color de parent en los nodos creo
+        node.append("circle")
+          
+ //el número es el radio de los circulos
+		    .attr("r", 3)
+            .style("fill", getParent);
+
+        node.append("text")
+            .attr("dy", ".31em")
+            .attr("text-anchor", function (d) { return d.x < 180 ? "start" : "end"; })
+            .attr("transform", function (d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
+            .text(function (d) { return d.name; });
+
+        d3.select(self.frameElement).style("height", diameter - 150 + "px");
+
+
+       
+
+
+
+
+//listo de aca para abajo
+
+        // funcion para cambiar los colores
+
+        function getParent(node) {
+            var keys = Object.keys(colores);
+            // console.log('keys', keys);                   !!!!!!!!!! comentar para apagar var c10
+            var item = keys.find(function (d) {
+              //  console.log('d.name', d.name);           !!!!!!!!!! comentar para apagar var c10
+               //  console.log('node.name', node.name);   !!!!!!!!!! comentar para apagar var c10
+                return d == node.name.toLowerCase();
+            });
+
+
+            // console.log('item', item); !!!!!!!!!! comentar para apagar var c10
+            if (item) {
+                return colores[item];
+               // return c10(item);   !!!!!!!!!! comentar para apagar var c10
+            } else {
+                if (node.parent) {
+                    return getParent(node.parent);
+                }
+                else {
+
+                    // color de diario y días
+                  //  return '#b7b7b7';
+              
+			   //colores que van en links y nodos de diario a los días
+				  return  '#E0D9D1';
+				
+				}
+				
+				
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
